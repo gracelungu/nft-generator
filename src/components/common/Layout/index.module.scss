@@ -1,0 +1,7 @@
+@import "../../../../styles/variables.scss";
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(300px, $max-width);
+  place-content: center;
+}

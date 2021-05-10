@@ -1,0 +1,34 @@
+@import "../../../../styles/variables.scss";
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(300px, $max-width);
+  background-color: $white-color;
+  padding: 0px 30px;
+}
+
+.container {
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  grid-template-columns: 100px 100px;
+}
+
+.link {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 4vw;
+}
