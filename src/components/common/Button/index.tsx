@@ -7,6 +7,7 @@ type Props = {
   color?: string;
   disabled?: boolean;
   loading?: boolean;
+  className?: string;
 };
 
 const Button: React.FC<Props> = ({
@@ -15,10 +16,11 @@ const Button: React.FC<Props> = ({
   color,
   disabled,
   loading,
+  className,
 }) => {
   return (
     <div
-      className={styles.button}
+      className={`${styles.button} ${className}`}
       onClick={!disabled ? () => null : onClick}
       style={{ backgroundColor: color }}
     >

@@ -1,12 +1,18 @@
 const withTypescript = require("@zeit/next-typescript");
 const withSass = require("@zeit/next-sass");
+const withCss = require("@zeit/next-css");
+const withSvgr = require("next-svgr");
 
 module.exports = withTypescript(
-  withSass({
-    webpack(config, options) {
-      return config;
-    },
-    cssModules: true,
-    sassLoaderOptions: {},
-  })
+  withSvgr(
+    withCss(
+      withSass({
+        webpack(config, options) {
+          return config;
+        },
+        cssModules: true,
+        sassLoaderOptions: {},
+      })
+    )
+  )
 );
