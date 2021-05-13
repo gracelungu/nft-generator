@@ -1,0 +1,30 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  padding: 30px 40px;
+  background-color: $white-color;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      padding-bottom: 8px;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    &__label {
+      font-size: 15px;
+      font-weight: 400;
+      color: $primary-color;
+    }
+  }
+}

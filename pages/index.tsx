@@ -1,6 +1,9 @@
 import Layout from "@/src/components/common/Layout";
 import Exchange from "@/src/components/Exchange";
+import Graph from "@/src/components/Graph";
 import Landing from "@/src/components/Landing";
+import Operations from "@/src/components/Operations";
+import Rate from "@/src/components/Rates";
 
 import styles from "./index.module.scss";
 
@@ -10,12 +13,13 @@ function HomePage() {
       <div className={styles.container}>
         <div className={styles.container__left}>
           <Landing />
-          <div className={styles.exchange}></div>
+          <Operations />
+          <Rate />
         </div>
 
         <div className={styles.container__right}>
+          <Graph />
           <Exchange />
-          <div className={styles.currencies}></div>
         </div>
       </div>
     </Layout>
