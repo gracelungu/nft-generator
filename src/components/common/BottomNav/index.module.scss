@@ -1,0 +1,40 @@
+@import "../../../../styles/variables.scss";
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: $white-color;
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.red {
+  color: $red-color;
+}
+
+.green {
+  color: $green-color;
+}
+
+@media (min-width: $media-max-width) {
+  .container {
+    display: none;
+  }
+}

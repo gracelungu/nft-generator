@@ -1,29 +1,32 @@
-import InitialState from "@/src/redux/types/initialStates";
-import { TypedUseSelectorHook, useSelector } from "react-redux";
+import BottomNav from "@/src/components/common/BottomNav";
+import Layout from "@/src/components/common/Layout";
+import Exchange from "@/src/components/Exchange";
+import Graph from "@/src/components/Graph";
+import Landing from "@/src/components/Landing";
+import Operations from "@/src/components/Operations";
+import Rate from "@/src/components/Rates";
 
-const typedUseSelector: TypedUseSelectorHook<InitialState> = useSelector;
+import styles from "./index.module.scss";
 
-function HomePage({ API_URL }) {
-  const {
-    authentication: {
-      login: { loading },
-    },
-  } = typedUseSelector((state) => state);
-
+function HomePage() {
   return (
-    <div>
-      Welcome to Next.js! {API_URL} and
-      {loading}
-    </div>
-  );
-}
+    <Layout>
+      <div className={styles.container}>
+        <div className={styles.container__left}>
+          <Landing />
+          <Operations />
+          <Rate />
+        </div>
 
-export async function getStaticProps() {
-  return {
-    props: {
-      API_URL: process.env.API_URL,
-    },
-  };
+        <div className={styles.container__right}>
+          <Graph />
+          <Exchange />
+        </div>
+      </div>
+
+      <BottomNav />
+    </Layout>
+  );
 }
 
 export default HomePage;
