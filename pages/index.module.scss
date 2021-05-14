@@ -1,0 +1,17 @@
+@import "../styles/variables.scss";
+
+.container {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 20px;
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    display: flex;
+    padding: 20px 20px 100px;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,65 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  padding: 20px;
+  background-color: $white-color;
+  margin-bottom: 20px;
+
+  &__illustration {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    &__title {
+      font-size: 30px;
+      font-weight: 700;
+      padding-bottom: 20px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    &__telecom {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+    }
+
+    &__button {
+      place-self: start;
+      display: inline-block !important;
+    }
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    display: flex;
+    &__illustration {
+      display: none;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &__subtitle {
+        padding-bottom: 20px;
+      }
+
+      &__button {
+        margin-top: 20px;
+      }
+    }
+  }
+}

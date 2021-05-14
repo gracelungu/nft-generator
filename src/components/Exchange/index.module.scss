@@ -1,0 +1,32 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  padding: 20px;
+  background-color: $white-color;
+  margin-bottom: 20px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 25px;
+  }
+
+  &__select_wrapper {
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 12px;
+  }
+
+  &__select {
+    margin-bottom: 12px;
+  }
+
+  &__sell {
+    text-align: center;
+    padding: 30px 0 20px;
+  }
+}

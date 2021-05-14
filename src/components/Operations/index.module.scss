@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  padding: 40px;
+  background-color: $white-color;
+  margin-bottom: 20px;
+
+  &__top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    &__title {
+      font-size: 28px;
+      font-weight: 700;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      padding-right: 20px;
+    }
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    display: none;
+  }
+}

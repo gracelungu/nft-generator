@@ -1,0 +1,76 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  padding: 30px 40px;
+  background-color: $white-color;
+  margin-bottom: 20px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      padding-bottom: 8px;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    &__label {
+      font-size: 15px;
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+
+  &__rate {
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__coin {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+      padding-bottom: 10px;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &__subtitleCurrency {
+      color: $primary-color;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    padding: 20px;
+  }
+}
