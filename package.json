@@ -31,7 +31,8 @@
     "recharts": "^2.0.9",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@types/next-redux-wrapper": "^3.0.0",
