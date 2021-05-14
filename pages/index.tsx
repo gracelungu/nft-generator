@@ -1,3 +1,4 @@
+import BottomNav from "@/src/components/common/BottomNav";
 import Layout from "@/src/components/common/Layout";
 import Exchange from "@/src/components/Exchange";
 import Graph from "@/src/components/Graph";
@@ -22,6 +23,8 @@ function HomePage() {
           <Exchange />
         </div>
       </div>
+
+      <BottomNav />
     </Layout>
   );
 }

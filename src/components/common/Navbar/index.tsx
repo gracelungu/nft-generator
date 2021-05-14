@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
 import styles from "./Navbar.module.scss";
+
+config.autoAddCss = false;
 
 type Props = {
   title?: string;
@@ -37,6 +40,8 @@ const Navbar: React.FunctionComponent<Props> = ({
         <meta name="twitter:description" content={description} />
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <style>{dom.css()}</style>
       </Head>
 
       <div className={styles.wrapper}>

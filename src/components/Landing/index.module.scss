@@ -40,3 +40,26 @@
     }
   }
 }
+
+@media (max-width: $media-max-width) {
+  .container {
+    display: flex;
+    &__illustration {
+      display: none;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &__subtitle {
+        padding-bottom: 20px;
+      }
+
+      &__button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
