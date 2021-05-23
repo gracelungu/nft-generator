@@ -50,12 +50,12 @@ const Navbar: React.FunctionComponent<Props> = ({
 
           <div className={styles.menu}>
             <span className={styles.link}>
-              <Link href="/">
+              <Link href="/login">
                 <a>Login</a>
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/">
+              <Link href="/signup">
                 <a>Signup</a>
               </Link>
             </span>
