@@ -1,4 +1,5 @@
 import * as React from "react";
+import BottomNav from "../BottomNav";
 import Navbar from "../Navbar";
 
 import styles from "./index.module.scss";
@@ -33,6 +34,8 @@ const Layout: React.FunctionComponent<Props> = ({
       image={image}
     />
     <div className={styles.layout}>{children}</div>
+
+    <BottomNav />
   </>
 );
 

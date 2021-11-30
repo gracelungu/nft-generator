@@ -2,17 +2,29 @@
 
 .button {
   background-color: $primary-color;
-  border-radius: 5px;
-  padding: 12px 15px;
+  border-radius: 40px;
+  padding: 18px 50px;
   display: flex;
   justify-content: center;
+
+  p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 .title {
   display: flex;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   color: $white-color;
+  text-transform: uppercase;
 }
 .spinner {
   width: 20px;

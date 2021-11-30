@@ -6,37 +6,33 @@ import Button from "../common/Button";
 function Landing() {
   return (
     <div className={styles.container}>
-      <img
-        src="/static/images/mainIllustration.svg"
-        className={styles.container__illustration}
-      />
-
       <div className={styles.container__info}>
         <span className={styles.container__info__title}>
-          Buy and sell cryptocurrency
+          A trusted decentralized financial contract for locked crypto savings
         </span>
         <span className={styles.container__info__subtitle}>
-          We support a variety of payment methods ranging from local to
-          international
+          A better way to lock your etherium savings away from traditional
+          banks, locked for the desired amount of time. Protects you from
+          undecided and uncertain actions.
         </span>
 
-        <div>
-          <img
-            src="/static/images/mtnLogo.svg"
-            className={styles.container__info__telecom}
+        <div className={styles.container__info__actions}>
+          <Button
+            className={styles.container__info__button}
+            title="Get started"
           />
-          <img
-            src="/static/images/airtelLogo.svg"
-            className={styles.container__info__telecom}
+
+          <Button
+            className={`${styles.container__info__button} ${styles.container__info__button__buy}`}
+            title="Buy the LOCK token"
           />
         </div>
-
-        <Button
-          className={styles.container__info__button}
-          color="#333"
-          title="Get started"
-        />
       </div>
+
+      <img
+        src="/static/images/Coins-bro.svg"
+        className={styles.container__illustration}
+      />
     </div>
   );
 }

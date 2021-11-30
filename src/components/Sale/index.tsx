@@ -2,17 +2,14 @@ import React from "react";
 import Button from "../common/Button";
 import styles from "./index.module.scss";
 
-function Operations() {
+function Sale() {
   return (
-    <div className={styles.container} id="howitworks">
+    <div className={styles.container} id="locktoken">
       <div className={styles.container__top}>
-        <img
-          src="/static/images/piggy.svg"
-          className={styles.container__top__illustration}
-        />
-
         <div className={styles.container__top__info}>
-          <div className={styles.container__top__title}>How it works</div>
+          <div className={styles.container__top__title}>
+            LOCK SAVE TOKEN (LOCK)
+          </div>
 
           <div className={styles.container__top__subtitle}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
@@ -28,9 +25,14 @@ function Operations() {
             />
           </div>
         </div>
+
+        <img
+          src="/static/images/pot.svg"
+          className={styles.container__top__illustration}
+        />
       </div>
     </div>
   );
 }
 
-export default Operations;
+export default Sale;

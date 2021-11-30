@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 import styles from "./Navbar.module.scss";
+import Button from "../Button";
 
 config.autoAddCss = false;
 
@@ -46,18 +47,28 @@ const Navbar: React.FunctionComponent<Props> = ({
 
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <span className={styles.logo}>Logo</span>
+          <div className={styles.logoWrapper}>
+            <img src="/static/images/locklogo.svg" className={styles.logo} />{" "}
+            <h5>LOCK SAVE</h5>
+          </div>
 
           <div className={styles.menu}>
             <span className={styles.link}>
-              <Link href="/login">
-                <a>Login</a>
+              <Link href="#howitworks">
+                <a>
+                  <b>HOW IT WORKS</b>
+                </a>
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/signup">
-                <a>Signup</a>
+              <Link href="#locktoken">
+                <a>
+                  <b>BUY THE LOCK TOKEN</b>
+                </a>
               </Link>
+            </span>
+            <span className={styles.link}>
+              <Button title="Get started" className={styles.navbar__button} />
             </span>
           </div>
         </div>

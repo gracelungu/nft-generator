@@ -11,12 +11,18 @@
 .container {
   padding: 20px 0px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 700;
+  width: 50px;
+  height: 50px;
 }
 
 .menu {
@@ -31,4 +37,13 @@
   font-weight: 400;
   line-height: normal;
   margin-left: 4vw;
+}
+
+@media (max-width: $media-max-width) {
+  a {
+    display: none;
+  }
+  .navbar__button {
+    padding: 10px 30px !important;
+  }
 }
