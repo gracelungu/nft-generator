@@ -25,6 +25,7 @@ const Navbar: React.FunctionComponent<Props> = ({
   return (
     <>
       <Head>
+        <link rel="shortcut icon" href="/static/images/favicon.ico" />
         <title>{title}</title>
         <meta name="author" content={author} />
         <meta name="description" content={description} />
