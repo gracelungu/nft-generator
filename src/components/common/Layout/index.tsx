@@ -34,8 +34,6 @@ const Layout: React.FunctionComponent<Props> = ({
       image={image}
     />
     <div className={styles.layout}>{children}</div>
-
-    <BottomNav />
   </>
 );
 

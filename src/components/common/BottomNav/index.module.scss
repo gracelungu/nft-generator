@@ -1,11 +1,12 @@
 @import "../../../../styles/variables.scss";
 
 .footer {
+  width: 100%;
   display: grid;
-  grid-template-columns: minmax(300px, $max-width);
-  place-content: center;
   padding: 40px 0;
+  place-content: center;
   background-color: #f4f5f9;
+  grid-template-columns: minmax(300px, $max-width);
 }
 
 @media (max-width: $media-max-width) {

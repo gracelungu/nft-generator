@@ -67,7 +67,7 @@ const Navbar: React.FunctionComponent<Props> = ({
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/#locktoken">
+              <Link href="/sell">
                 <a>
                   <span>
                     <b>BUY THE LOCK TOKEN</b>
