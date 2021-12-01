@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  .info {
+    padding-right: 40px;
+    max-width: 50%;
+    &__title {
+      font-size: 45px;
+      font-weight: 900;
+      padding: 0px 0px 25px;
+    }
+
+    &__subtitle {
+      font-size: 25px;
+      font-weight: 500;
+      padding-top: 20px;
+      padding-bottom: 60px;
+    }
+  }
+
+  .save {
+    min-width: 45%;
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    .info {
+      padding: 20px;
+      max-width: 100%;
+    }
+    .save {
+      min-width: 100%;
+    }
+  }
+}

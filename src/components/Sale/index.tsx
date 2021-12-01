@@ -20,8 +20,8 @@ function Sale() {
 
           <div className={styles.container__top__actions}>
             <Button
-              className={styles.container__top__button}
-              title="Get started"
+              className={`${styles.container__top__button} ${styles.container__top__button__buy}`}
+              title="Buy the LOCK token"
             />
           </div>
         </div>

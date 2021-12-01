@@ -39,6 +39,11 @@
       place-self: start;
       display: inline-block !important;
     }
+
+    &__button__buy {
+      margin-left: 10px;
+      background-color: #333;
+    }
   }
 }
 

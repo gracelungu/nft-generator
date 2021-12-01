@@ -8,7 +8,8 @@ function Landing() {
     <div className={styles.container}>
       <div className={styles.container__info}>
         <span className={styles.container__info__title}>
-          A trusted decentralized financial contract for locked crypto savings
+          A Decentralized Financial contract for locking your ETH in a temporal
+          Safe
         </span>
         <span className={styles.container__info__subtitle}>
           A better way to lock your etherium savings away from traditional

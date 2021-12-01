@@ -47,23 +47,34 @@ const Navbar: React.FunctionComponent<Props> = ({
 
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <div className={styles.logoWrapper}>
-            <img src="/static/images/locklogo.svg" className={styles.logo} />{" "}
-            <h5>LOCK SAVE</h5>
-          </div>
+          <Link href="/">
+            <a>
+              <div className={styles.logoWrapper}>
+                <img
+                  src="/static/images/locklogo.svg"
+                  className={styles.logo}
+                />
+                <h5>LOCK SAVE</h5>
+              </div>
+            </a>
+          </Link>
 
           <div className={styles.menu}>
             <span className={styles.link}>
               <Link href="#howitworks">
                 <a>
-                  <b>HOW IT WORKS</b>
+                  <span>
+                    <b>HOW IT WORKS</b>
+                  </span>
                 </a>
               </Link>
             </span>
             <span className={styles.link}>
               <Link href="#locktoken">
                 <a>
-                  <b>BUY THE LOCK TOKEN</b>
+                  <span>
+                    <b>BUY THE LOCK TOKEN</b>
+                  </span>
                 </a>
               </Link>
             </span>
