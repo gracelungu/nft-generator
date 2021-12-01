@@ -9,10 +9,16 @@ function HomePage() {
         <div className={styles.info}>
           <div className={styles.info__title}>Lock your savings</div>
           <div className={styles.info__subtitle}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            voluptatum dignissimos asperiores vitae molestiae nam id vel
-            temporibus, sapiente error quibusdam harum officia minus, illum,
-            deserunt quasi facilis distinctio magnam?
+            Your Etherium shall be locked in the smart contract until the date
+            of withdrawal has come to pass. Then you will be able to withdraw
+            your Etherium.
+            <br />
+            <br />
+            The address will still be able to withdraw its savings before the
+            predefined date, but <b>1% of the saving</b> will be deducted from
+            the amount initially locked. This deduction is to{" "}
+            <b>incentivize the user</b> to keep their funds in the contract to
+            help them achieve their savings goals.
           </div>
         </div>
 

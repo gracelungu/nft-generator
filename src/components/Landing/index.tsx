@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 import styles from "./index.module.scss";
 import Button from "../common/Button";
 
@@ -12,21 +12,29 @@ function Landing() {
           Safe
         </span>
         <span className={styles.container__info__subtitle}>
-          A better way to lock your etherium savings away from traditional
-          banks, locked for the desired amount of time. Protects you from
-          undecided and uncertain actions.
+          Commit to your saving goals by locking your Etherium for a predefined
+          amount of time, and be protected from unplanned and undecided
+          transactions that result in the shrinkage of your savings.
         </span>
 
         <div className={styles.container__info__actions}>
-          <Button
-            className={styles.container__info__button}
-            title="Get started"
-          />
+          <Link href="/save">
+            <a>
+              <Button
+                className={styles.container__info__button}
+                title="SAVE NOW"
+              />
+            </a>
+          </Link>
 
-          <Button
-            className={`${styles.container__info__button} ${styles.container__info__button__buy}`}
-            title="Buy the LOCK token"
-          />
+          <Link href="/sell">
+            <a>
+              <Button
+                className={`${styles.container__info__button} ${styles.container__info__button__buy}`}
+                title="Buy the LOCK token"
+              />
+            </a>
+          </Link>
         </div>
       </div>
 

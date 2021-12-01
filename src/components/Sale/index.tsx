@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Button from "../common/Button";
 import styles from "./index.module.scss";
 
@@ -12,17 +13,21 @@ function Sale() {
           </div>
 
           <div className={styles.container__top__subtitle}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-            ratione saepe laboriosam, sequi esse dolore minima omnis consectetur
-            perferendis voluptas dolores, rem exercitationem ipsam laudantium,
-            est quia voluptatem nemo. Ratione.
+            The Lock Save Token (LOCK) is an ERC20 token for the Lock Save
+            Protocol. This token can be purchased with ETH or swapped on the
+            pancake exchange. During our upcoming ICO the token shall be used
+            for investment in the Lock Save Protocol.
           </div>
 
           <div className={styles.container__top__actions}>
-            <Button
-              className={`${styles.container__top__button} ${styles.container__top__button__buy}`}
-              title="Buy the LOCK token"
-            />
+            <Link href="/sell">
+              <a>
+                <Button
+                  className={`${styles.container__top__button} ${styles.container__top__button__buy}`}
+                  title="Buy the LOCK token"
+                />
+              </a>
+            </Link>
           </div>
         </div>
 

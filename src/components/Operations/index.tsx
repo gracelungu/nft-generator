@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Button from "../common/Button";
 import styles from "./index.module.scss";
 
@@ -15,17 +16,30 @@ function Operations() {
           <div className={styles.container__top__title}>How it works</div>
 
           <div className={styles.container__top__subtitle}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-            ratione saepe laboriosam, sequi esse dolore minima omnis consectetur
-            perferendis voluptas dolores, rem exercitationem ipsam laudantium,
-            est quia voluptatem nemo. Ratione.
+            Lock Save is an <b>Etherium smart contract</b>, allowing it's users
+            to save their coins and choose when these coins should be available
+            to be withdrawn. The saving is done by locking the coins in the
+            smart contract using the current platform. <br /> <br /> The
+            platform gives to the user an intuitive interface to input the
+            amount of coins they want to save, and the date they wish to
+            withdraw.
+            <br /> <br />
+            The address will still be able to withdraw its savings before the
+            predefined date, but <b>1% of the saving</b> will be deducted from
+            the amount initially locked. This deduction is to{" "}
+            <b>incentivize the user</b> to keep their funds in the contract to
+            help them achieve their savings goals.
           </div>
 
           <div className={styles.container__top__actions}>
-            <Button
-              className={styles.container__top__button}
-              title="Get started"
-            />
+            <Link href="/save">
+              <a>
+                <Button
+                  className={styles.container__top__button}
+                  title="SAVE NOW"
+                />
+              </a>
+            </Link>
           </div>
         </div>
       </div>

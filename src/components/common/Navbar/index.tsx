@@ -16,7 +16,7 @@ type Props = {
 };
 
 const Navbar: React.FunctionComponent<Props> = ({
-  title = "Capitalmet",
+  title = "Lock Save",
   description,
   author,
   link,
@@ -30,7 +30,7 @@ const Navbar: React.FunctionComponent<Props> = ({
         <meta name="description" content={description} />
         <link rel="canonical" href={link} />
 
-        <meta property="og:site_name" content="Capitalmet" />
+        <meta property="og:site_name" content="Lock Save" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={link} />
         <meta property="og:title" content={title} />
@@ -50,18 +50,14 @@ const Navbar: React.FunctionComponent<Props> = ({
           <Link href="/">
             <a>
               <div className={styles.logoWrapper}>
-                <img
-                  src="/static/images/locklogo.svg"
-                  className={styles.logo}
-                />
-                <h5>LOCK SAVE</h5>
+                <img src="/static/images/logo2.svg" className={styles.logo} />
               </div>
             </a>
           </Link>
 
           <div className={styles.menu}>
             <span className={styles.link}>
-              <Link href="#howitworks">
+              <Link href="/#howitworks">
                 <a>
                   <span>
                     <b>HOW IT WORKS</b>
@@ -70,7 +66,7 @@ const Navbar: React.FunctionComponent<Props> = ({
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="#locktoken">
+              <Link href="/#locktoken">
                 <a>
                   <span>
                     <b>BUY THE LOCK TOKEN</b>
@@ -79,7 +75,20 @@ const Navbar: React.FunctionComponent<Props> = ({
               </Link>
             </span>
             <span className={styles.link}>
-              <Button title="Get started" className={styles.navbar__button} />
+              <Link href="/withdraw">
+                <a>
+                  <span>
+                    <b>WITHDRAW</b>
+                  </span>
+                </a>
+              </Link>
+            </span>
+            <span className={styles.link}>
+              <Link href="/save">
+                <a>
+                  <Button title="SAVE NOW" className={styles.navbar__button} />
+                </a>
+              </Link>
             </span>
           </div>
         </div>
