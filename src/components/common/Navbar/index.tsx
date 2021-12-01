@@ -17,10 +17,10 @@ type Props = {
 
 const Navbar: React.FunctionComponent<Props> = ({
   title = "Lock Save",
-  description,
+  description = "A Decentralized Financial contract for locking your ETH in a temporal Safe",
   author,
-  link,
-  image,
+  link = "locksave.io",
+  image = "/static/images/piggy.svg",
 }) => {
   return (
     <>
@@ -35,6 +35,7 @@ const Navbar: React.FunctionComponent<Props> = ({
         <meta property="og:url" content={link} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
 
         <meta name="twitter:url" content={link} />
         <meta name="twitter:title" content={title} />
