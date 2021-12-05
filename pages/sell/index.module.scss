@@ -3,12 +3,12 @@
 .container {
   display: flex;
   justify-content: space-between;
-  padding-top: 60px;
+  padding-top: 40px;
   padding-bottom: 50px;
 
   .info {
     padding-right: 40px;
-    max-width: 50%;
+    max-width: 100%;
     &__title {
       font-size: 45px;
       font-weight: 900;
@@ -20,6 +20,10 @@
       font-weight: 500;
       padding-top: 20px;
       padding-bottom: 60px;
+    }
+
+    &__button {
+      display: inline-block;
     }
   }
 

@@ -74,8 +74,8 @@ function Exchange() {
       />
 
       <div className={styles.container__sell}>
-        <Link href="/sell">
-          <a>BUY THE LOCK TOKEN</a>
+        <Link href="/withdraw">
+          <a>WITHDRAW YOUR ETH</a>
         </Link>
       </div>
     </div>
