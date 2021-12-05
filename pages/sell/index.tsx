@@ -16,18 +16,27 @@ function Sell() {
             for investment in the Lock Save Protocol.
           </div>
 
-          <div className={styles.info__title}>Buy on the Uniswap DEX</div>
+          <div className={styles.info__title}>Buy on the Pancake Swap DEX</div>
           <div className={styles.info__subtitle}>
-            You can purchase the token from the Uniswap exchange. <br /> Learn
-            more about the Uniswap DEX and how to swap your tokens{" "}
-            <Link href="https://www.benzinga.com/money/uniswap/">
+            You can purchase the token from the Pancake Swap exchange.
+            <br /> Before you can trade, you will need a Binance Smart
+            Chain-compatible wallet Learn more about the Pancake Swap DEX and
+            how to swap your tokens{" "}
+            <Link href="https://docs.pancakeswap.finance/products/pancakeswap-exchange/trade-guide">
               <b>
                 <a>here</a>
               </b>
             </Link>
           </div>
 
-          <Button title="Buy on Uniswap" className={styles.info__button} />
+          <Link href="https://pancakeswap.finance/swap">
+            <a>
+              <Button
+                title="Buy on Pancake Swap"
+                className={styles.info__button}
+              />
+            </a>
+          </Link>
         </div>
       </div>
     </Layout>
