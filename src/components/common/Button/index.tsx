@@ -21,8 +21,8 @@ const Button: React.FC<Props> = ({
   return (
     <div
       className={`${styles.button} ${className}`}
-      onClick={!disabled ? () => null : onClick}
-      style={{ backgroundColor: color }}
+      onClick={!disabled ? onClick : () => null}
+      style={{ backgroundColor: !disabled ? color : "gray" }}
     >
       {!loading && <p className={styles.title}>{title}</p>}
       {loading && <div className={styles.spinner} />}

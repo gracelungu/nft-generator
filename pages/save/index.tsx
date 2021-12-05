@@ -9,9 +9,9 @@ function HomePage() {
         <div className={styles.info}>
           <div className={styles.info__title}>Lock your savings</div>
           <div className={styles.info__subtitle}>
-            Your Etherium shall be locked in the smart contract until the date
+            Your Ethereum shall be locked in the smart contract until the date
             of withdrawal has come to pass. Then you will be able to withdraw
-            your Etherium.
+            your Ethereum.
             <br />
             <br />
             The address will still be able to withdraw its savings before the

@@ -1,17 +1,62 @@
 import React from "react";
 import Link from "next/link";
-import Select from "react-select";
+import web3 from "@/src/services/web3";
 import Button from "../common/Button";
 import Input from "../common/Input";
 import styles from "./index.module.scss";
+import ContentLoader from "react-content-loader";
+import Router from "next/router";
 
 function Exchange() {
+  const [date, setDate] = React.useState();
+  const [amount, setAmount] = React.useState();
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const d = new Date();
+
+  const handleSave = async () => {
+    try {
+      if (amount && date) {
+        setIsLoading(true);
+        await web3.setMetaMaskAccount();
+
+        const accounts = await web3.getAccounts();
+        web3.receiveSavings(accounts[0], amount, new Date(date).getTime());
+        setIsLoading(false);
+        Router.push("/");
+      }
+    } catch (e) {
+      setIsLoading(false);
+      console.log(e);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.container__title}>Save yourself some etherium</div>
-      <Input label="Amount to be saved in (eth)" type="number" />
+      <div className={styles.container__title}>Save yourself some ethereum</div>
 
-      <Input label="Minimum withdrawal date" type="date" />
+      {!isLoading && (
+        <>
+          <Input
+            label="Amount to be saved in (eth)"
+            type="number"
+            onChange={({ target: { value } }: Record<string, any>) =>
+              setAmount(value)
+            }
+          />
+
+          <Input
+            label="Minimum withdrawal date"
+            type="date"
+            min={d.toISOString().split("T")[0]}
+            onChange={({ target: { value } }: Record<string, any>) =>
+              setDate(value)
+            }
+          />
+        </>
+      )}
+
+      {isLoading && <ContentLoader />}
 
       <div className={styles.container__disclaimer}>
         <h4>Disclaimer</h4>
@@ -21,7 +66,12 @@ function Exchange() {
         </p>
       </div>
 
-      <Button title="Save your ETH" />
+      <Button
+        title="Save your ETH"
+        onClick={handleSave}
+        loading={isLoading}
+        disabled={!amount || !date || isLoading}
+      />
 
       <div className={styles.container__sell}>
         <Link href="/sell">

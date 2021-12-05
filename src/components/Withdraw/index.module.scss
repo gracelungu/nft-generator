@@ -33,7 +33,7 @@
     }
   }
 
-  &__rate {
+  &__withdraw {
     padding: 20px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -78,7 +78,7 @@
   .container {
     padding: 20px;
 
-    &__rate {
+    &__withdr {
       gap: 20px;
 
       &__coin {

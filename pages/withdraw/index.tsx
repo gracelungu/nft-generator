@@ -1,5 +1,5 @@
 import Layout from "@/src/components/common/Layout";
-import Rate from "@/src/components/Rates";
+import Withdraw from "@/src/components/Withdraw";
 import styles from "./index.module.scss";
 
 function HomePage() {
@@ -20,7 +20,7 @@ function HomePage() {
         </div>
 
         <div className={styles.save}>
-          <Rate />
+          <Withdraw />
         </div>
       </div>
     </Layout>

@@ -12,7 +12,7 @@ function Landing() {
           Safe
         </span>
         <span className={styles.container__info__subtitle}>
-          Commit to your saving goals by locking your Etherium for a predefined
+          Commit to your saving goals by locking your Ethereum for a predefined
           amount of time, and be protected from unplanned and undecided
           transactions that result in the shrinkage of your savings.
         </span>

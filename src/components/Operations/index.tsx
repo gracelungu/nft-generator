@@ -16,7 +16,7 @@ function Operations() {
           <div className={styles.container__top__title}>How it works</div>
 
           <div className={styles.container__top__subtitle}>
-            Lock Save is an <b>Etherium smart contract</b>, allowing it's users
+            Lock Save is an <b>Ethereum smart contract</b>, allowing it's users
             to save their coins and choose when these coins should be available
             to be withdrawn. The saving is done by locking the coins in the
             smart contract using the current platform. <br /> <br /> The
