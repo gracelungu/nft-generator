@@ -8,9 +8,9 @@ class Web3Service {
   contract: any;
 
   constructor() {
-    this.rpcUrl = "http://127.0.0.1:7545";
-    this.web3 = new Web3(Web3.givenProvider || this.rpcUrl);
-    this.address = "0x082E119be6cEC2dF5d6fAB031Ab342c2E05bC19c";
+    this.rpcUrl = "https://bsc-dataseed1.binance.org:443";
+    this.web3 = new Web3(this.rpcUrl);
+    this.address = "0x5E699730897D9f1b960bE09bFa3Bead161532616";
     this.contract = this.generateContract();
   }
 

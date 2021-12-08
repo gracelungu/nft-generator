@@ -8,8 +8,7 @@ function Landing() {
     <div className={styles.container}>
       <div className={styles.container__info}>
         <span className={styles.container__info__title}>
-          A Decentralized Financial contract for locking your ETH in a temporal
-          Safe
+          A DeFi application that locks your Ethereum in a temporal Safe
         </span>
         <span className={styles.container__info__subtitle}>
           Commit to your saving goals by locking your Ethereum for a predefined
