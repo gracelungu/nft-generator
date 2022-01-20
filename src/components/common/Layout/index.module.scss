@@ -1,6 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .layout {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(300px, $max-width);
   place-content: center;

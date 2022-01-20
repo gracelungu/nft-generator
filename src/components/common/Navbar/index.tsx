@@ -16,10 +16,10 @@ type Props = {
 };
 
 const Navbar: React.FunctionComponent<Props> = ({
-  title = "Lock Save",
-  description = "A Decentralized Financial contract for locking your ETH in a temporal Safe",
+  title = "NFT generator",
+  description = " ",
   author,
-  link = "locksave.io",
+  link = "",
   image = "/static/images/piggy.svg",
 }) => {
   return (
@@ -52,7 +52,7 @@ const Navbar: React.FunctionComponent<Props> = ({
           <Link href="/">
             <a>
               <div className={styles.logoWrapper}>
-                <img src="/static/images/logo2.svg" className={styles.logo} />
+                <img src="/static/images/logo.svg" className={styles.logo} />
               </div>
             </a>
           </Link>
@@ -68,27 +68,9 @@ const Navbar: React.FunctionComponent<Props> = ({
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/sell">
-                <a>
-                  <span>
-                    <b>BUY THE LOCK TOKEN</b>
-                  </span>
-                </a>
-              </Link>
-            </span>
-            <span className={styles.link}>
-              <Link href="/withdraw">
-                <a>
-                  <span>
-                    <b>WITHDRAW</b>
-                  </span>
-                </a>
-              </Link>
-            </span>
-            <span className={styles.link}>
               <Link href="/save">
                 <a>
-                  <Button title="SAVE NOW" className={styles.navbar__button} />
+                  <Button title="GENERATE" className={styles.navbar__button} />
                 </a>
               </Link>
             </span>

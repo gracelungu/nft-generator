@@ -8,6 +8,13 @@
   column-gap: 20px;
 }
 
+.textarea {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 80%;
+}
+
 @media (max-width: $media-max-width) {
   .container {
     display: flex;

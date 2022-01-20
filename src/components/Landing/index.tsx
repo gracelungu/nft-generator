@@ -8,37 +8,40 @@ function Landing() {
     <div className={styles.container}>
       <div className={styles.container__info}>
         <span className={styles.container__info__title}>
-          A DeFi application that locks your Ethereum in a temporal Safe
+          Generate <span className={styles.container__info__colored}>NFT </span>{" "}
+          collections and corresponding contracts with no code
         </span>
         <span className={styles.container__info__subtitle}>
-          Commit to your saving goals by locking your Ethereum for a predefined
-          amount of time, and be protected from unplanned and undecided
-          transactions that result in the shrinkage of your savings.
+          A simple but useful tool to generate NFT collections and smart
+          contracts without coding.
         </span>
 
         <div className={styles.container__info__actions}>
-          <Link href="/save">
+          <Link href="/generate">
             <a>
               <Button
                 className={styles.container__info__button}
-                title="SAVE NOW"
-              />
-            </a>
-          </Link>
-
-          <Link href="/sell">
-            <a>
-              <Button
-                className={`${styles.container__info__button} ${styles.container__info__button__buy}`}
-                title="Buy the LOCK token"
+                title="START GENERATING"
               />
             </a>
           </Link>
         </div>
+
+        <div className={styles.container__info__more_info}>
+          <div className={styles.container__info__more_info__title}>
+            Generate up to
+          </div>
+          <div className={styles.container__info__more_info__big_title}>
+            <span className={styles.container__info__colored}>10,000</span>
+          </div>
+          <div className={styles.container__info__more_info__title}>
+            Assets free of charge
+          </div>
+        </div>
       </div>
 
       <img
-        src="/static/images/Coins-bro.svg"
+        src="/static/images/illustration.svg"
         className={styles.container__illustration}
       />
     </div>

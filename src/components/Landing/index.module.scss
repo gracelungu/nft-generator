@@ -2,49 +2,61 @@
 
 .container {
   display: flex;
-  justify-content: center;
-  padding-top: 40px;
+  height: 80vh;
+  padding-top: 20px;
   background-color: $background-color;
 
   &__illustration {
-    width: 50%;
+    position: absolute;
+    width: 45vw;
+    height: 80vh;
+    max-width: 45vw;
+    right: 0;
     object-fit: contain;
   }
 
   &__info {
-    max-width: 50%;
+    position: relative;
+    max-width: 48%;
     padding-right: 20px;
     display: flex;
     flex-direction: column;
 
+    &__colored {
+      color: $primary-color;
+    }
+
     &__title {
       font-size: 45px;
       font-weight: 900;
-      padding: 0px 0px 25px;
+      padding: 20px 0px 25px;
     }
 
     &__subtitle {
       font-size: 25px;
       font-weight: 500;
       padding-top: 20px;
-      padding-bottom: 60px;
-    }
-
-    &__telecom {
-      width: 30px;
-      height: 30px;
-      margin-right: 20px;
+      padding-bottom: 50px;
     }
 
     &__button {
-      margin-top: 20px;
+      margin-top: 10px;
       place-self: start;
       display: inline-block !important;
     }
 
-    &__button__buy {
-      margin-left: 10px;
-      background-color: #333;
+    &__more_info {
+      margin-top: 100px;
+      &__title {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0;
+      }
+      &__big_title {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+      }
     }
   }
 }
