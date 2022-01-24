@@ -1,0 +1,42 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  padding: 20px 30px;
+  background-color: #fff;
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    max-width: 50%;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    &__item {
+      width: 30%;
+
+      &__title {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      &__textarea {
+        height: 135px;
+        resize: none;
+      }
+
+      &__preview {
+        margin-top: 12px;
+        height: calc(100% - 70px);
+        border: 1px dashed #000;
+      }
+    }
+  }
+}

@@ -13,6 +13,7 @@ type Props = {
   className?: string;
   link?: string;
   image?: string;
+  dullBackground?: boolean;
 };
 
 const Navbar: React.FunctionComponent<Props> = ({
@@ -59,16 +60,16 @@ const Navbar: React.FunctionComponent<Props> = ({
 
           <div className={styles.menu}>
             <span className={styles.link}>
-              <Link href="/#howitworks">
+              <Link href="/#pricing">
                 <a>
                   <span>
-                    <b>HOW IT WORKS</b>
+                    <b>PRICING</b>
                   </span>
                 </a>
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/save">
+              <Link href="/generator">
                 <a>
                   <Button title="GENERATE" className={styles.navbar__button} />
                 </a>

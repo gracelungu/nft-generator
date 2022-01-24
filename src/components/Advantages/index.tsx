@@ -17,8 +17,8 @@ function Advantages() {
         <div className={styles.container__item__subtitle}>Adjustment</div>
       </div>
       <div className={styles.container__item}>
-        <div className={styles.container__item__title}>All</div>
-        <div className={styles.container__item__subtitle}>Free of charge</div>
+        <div className={styles.container__item__title}>Banner</div>
+        <div className={styles.container__item__subtitle}>Collage</div>
       </div>
     </div>
   );

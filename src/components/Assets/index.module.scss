@@ -1,0 +1,44 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  width: 63%;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    &__upload {
+      width: 48%;
+      height: 300px;
+      background-color: #fff;
+      border: 1px dashed #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &__title {
+        font-size: 15px;
+        font-weight: 300;
+      }
+    }
+    &__preview {
+      width: 48%;
+      height: 300px;
+      background-color: #fff;
+
+      &__title {
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: 500;
+        padding-bottom: 12px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}

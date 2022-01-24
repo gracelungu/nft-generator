@@ -1,5 +1,4 @@
 import * as React from "react";
-import BottomNav from "../BottomNav";
 import Navbar from "../Navbar";
 
 import styles from "./index.module.scss";
@@ -12,6 +11,8 @@ type Props = {
   link?: string;
   headerClassName?: string;
   className?: string;
+  noNavBar?: boolean;
+  dullBackground?: boolean;
 };
 
 const Layout: React.FunctionComponent<Props> = ({
@@ -23,17 +24,27 @@ const Layout: React.FunctionComponent<Props> = ({
   author,
   image,
   link,
+  noNavBar,
+  dullBackground,
 }) => (
   <>
-    <Navbar
-      title={title}
-      description={description}
-      author={author}
-      className={headerClassName}
-      link={link}
-      image={image}
-    />
-    <div className={styles.layout}>{children}</div>
+    {!noNavBar && (
+      <Navbar
+        title={title}
+        description={description}
+        author={author}
+        className={headerClassName}
+        link={link}
+        image={image}
+      />
+    )}
+    <div
+      className={`${styles.layout} ${
+        dullBackground ? styles.dullBackground : ""
+      }`}
+    >
+      {children}
+    </div>
   </>
 );
 

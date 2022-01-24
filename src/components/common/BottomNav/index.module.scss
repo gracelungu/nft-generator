@@ -1,25 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .footer {
-  width: 100%;
-  display: grid;
-  padding: 40px 0;
-  place-content: center;
-  background-color: #f4f5f9;
-  grid-template-columns: minmax(300px, $max-width);
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-
-    &__icon {
-      margin-left: 30px;
-    }
-  }
-}
-
-@media (max-width: $media-max-width) {
-  .footer {
-    padding: 40px 20px;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 40px;
 }

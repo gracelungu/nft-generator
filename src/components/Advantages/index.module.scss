@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .container {
   display: flex;
   width: 100%;
@@ -22,5 +24,11 @@
       font-weight: 600;
       margin-bottom: 10px;
     }
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    display: none;
   }
 }

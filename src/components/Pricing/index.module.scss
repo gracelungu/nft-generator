@@ -1,0 +1,44 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  padding: 20px 0px 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__colored {
+    color: $primary-color;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+  }
+
+  &__plans {
+    display: flex;
+    padding: 50px 0 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    margin-bottom: 0px;
+    &__plans {
+      flex-direction: column;
+    }
+  }
+}

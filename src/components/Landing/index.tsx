@@ -17,7 +17,7 @@ function Landing() {
         </span>
 
         <div className={styles.container__info__actions}>
-          <Link href="/generate">
+          <Link href="/generator">
             <a>
               <Button
                 className={styles.container__info__button}
@@ -32,7 +32,7 @@ function Landing() {
             Generate up to
           </div>
           <div className={styles.container__info__more_info__big_title}>
-            <span className={styles.container__info__colored}>10,000</span>
+            <span className={styles.container__info__colored}>1,000</span>
           </div>
           <div className={styles.container__info__more_info__title}>
             Assets free of charge
