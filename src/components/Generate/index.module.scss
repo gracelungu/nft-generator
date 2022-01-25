@@ -3,4 +3,14 @@
   padding: 20px 30px;
   background-color: #fff;
   margin-top: 20px;
+
+  &__input {
+    margin-bottom: 8px;
+  }
+
+  &__max {
+    padding-bottom: 30px;
+    font-size: 15px;
+    font-weight: 400;
+  }
 }

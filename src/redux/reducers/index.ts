@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import authentication from "./authentication";
+import layers from "./layers";
 
 const rootReducer = combineReducers({
-  authentication,
+  layers,
 });
 
 export default rootReducer;

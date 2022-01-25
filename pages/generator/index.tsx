@@ -1,3 +1,4 @@
+import BottomNav from "@/src/components/common/BottomNav";
 import Layout from "@/src/components/common/Layout";
 import Data from "@/src/components/Data";
 import Layers from "@/src/components/Layers";
@@ -10,6 +11,8 @@ function Generator() {
         <Data />
         <Layers />
       </div>
+
+      <BottomNav />
     </Layout>
   );
 }

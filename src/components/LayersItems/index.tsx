@@ -2,12 +2,28 @@ import React from "react";
 import Input from "../common/Input";
 import styles from "./index.module.scss";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import InitialState from "@/src/redux/types/initialStates";
+import {
+  createLayers,
+  setSelectedLayer,
+  updateLayers,
+} from "@/src/redux/actions/layers/layers";
 
-function LayersItems() {
-  const dummyLayer = { name: "Layer", id: new Date().getTime() };
-  const [layers, setLayers] = React.useState<Array<Record<string, any>>>([
-    dummyLayer,
-  ]);
+const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
+
+const LayersItems = () => {
+  const dummyLayer = {
+    name: "Layer",
+    position: new Date().getTime(),
+    images: [],
+  };
+
+  const state = typedUseSelectorHook((state) => state);
+  const {
+    layers: { items: layers },
+  } = state;
+  const dispatch = useDispatch();
 
   const handleOnDragEnd = (result: any) => {
     const {
@@ -17,7 +33,16 @@ function LayersItems() {
     const movedLayers = [...layers];
     const layer = movedLayers.splice(sourceIndex, 1)[0];
     movedLayers.splice(destinationIndex, 0, layer);
-    setLayers(movedLayers);
+    updateLayers(movedLayers)(dispatch);
+  };
+
+  const removeLayer = (index: number) => {
+    if (layers.length === 1) {
+      return updateLayers([dummyLayer])(dispatch);
+    }
+    updateLayers(layers.filter((_i, layerIndex) => layerIndex !== index))(
+      dispatch
+    );
   };
 
   return (
@@ -38,7 +63,7 @@ function LayersItems() {
               >
                 {layers.map((layer, index) => (
                   <Draggable
-                    key={layer.id}
+                    key={layer.position}
                     draggableId={layer.name}
                     index={index}
                   >
@@ -52,28 +77,23 @@ function LayersItems() {
                         <Input
                           placeholder="Layer name"
                           value={layer.name}
+                          onFocus={() => setSelectedLayer(index)(dispatch)}
                           onChange={({
                             target: { value },
                           }: Record<string, any>) =>
-                            setLayers(
+                            updateLayers(
                               layers.map((layer, layerIndex) =>
                                 layerIndex === index
                                   ? { ...layer, name: value }
                                   : layer
                               )
-                            )
+                            )(dispatch)
                           }
                           className={styles.container__items__item}
                         />
                         <div
                           className={styles.container__items__remove}
-                          onClick={() =>
-                            setLayers(
-                              layers.filter(
-                                (_i, layerIndex) => layerIndex !== index
-                              )
-                            )
-                          }
+                          onClick={() => removeLayer(index)}
                         >
                           Remove
                         </div>
@@ -89,7 +109,9 @@ function LayersItems() {
 
       <div
         onClick={() =>
-          setLayers([...layers, { ...dummyLayer, id: new Date().getTime() }])
+          createLayers({ ...dummyLayer, position: new Date().getTime() })(
+            dispatch
+          )
         }
         className={styles.container__items__button}
       >
@@ -97,6 +119,6 @@ function LayersItems() {
       </div>
     </div>
   );
-}
+};
 
 export default LayersItems;

@@ -4,7 +4,7 @@ import Generate from "../Generate";
 import LayersItems from "../LayersItems";
 import styles from "./index.module.scss";
 
-function Layers() {
+const Layers = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container__left}>
@@ -14,6 +14,6 @@ function Layers() {
       <Assets />
     </div>
   );
-}
+};
 
 export default Layers;

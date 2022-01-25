@@ -1,5 +1,7 @@
-import iAuthentication from "./authentication";
+import layers from "./layers";
+import data from "./data";
 
 export default {
-  authentication: iAuthentication,
+  layers,
+  data,
 };

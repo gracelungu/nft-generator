@@ -1,17 +1,19 @@
-import fs from "fs";
 import { createCanvas, loadImage } from "canvas";
+import { saveAs } from "file-saver";
+import JSZip from "jszip";
 
-type Size = {
+export type Size = {
   width: number;
   height: number;
 };
 
-type Image = {
+export type Image = {
+  name: string;
   path: string;
   rarity: number;
 };
 
-type Layer = {
+export type Layer = {
   position: number;
   name: string;
   images: Array<Image>;
@@ -22,14 +24,31 @@ class Engine {
   size: Size;
   ctx: any;
   collectionSize: number;
+  canvas: any;
+  preview: string;
+  jszip: any;
 
   constructor(size: Size, layers: Array<Layer>, collectionSize: number) {
     this.size = size;
     this.layers = layers;
     this.collectionSize = collectionSize;
+    this.preview = "";
+    this.jszip = new JSZip();
 
-    const canvas = createCanvas(size.width, size.height);
-    this.ctx = canvas.getContext("2d");
+    this.canvas = createCanvas(size.width, size.height);
+    this.ctx = this.canvas.getContext("2d");
+  }
+
+  setSize(size: Size) {
+    this.size = size;
+  }
+
+  setLayers(layers: Array<Layer>) {
+    this.layers = layers;
+  }
+
+  setCollectionSize(collectionSize: number) {
+    this.collectionSize = collectionSize;
   }
 
   clearCanvas() {
@@ -41,17 +60,56 @@ class Engine {
     this.ctx.drawImage(image, 0, 0);
   }
 
+  async generateNFTPreview(images: Array<Image>) {
+    this.clearCanvas();
+    const drawing = images.map(async ({ path }) => {
+      return this.drawImage(path);
+    });
+    await Promise.all(drawing);
+  }
+
   async generateNFT(images: Array<Image>, fileName: string) {
     const drawing = images.map(async ({ path }) => {
       return this.drawImage(path);
     });
     await Promise.all(drawing);
-    await this.saveCanvasFile(`${fileName}.png`);
-    this.clearCanvas();
+    await this.saveFileToZip(fileName);
+  }
+
+  async saveFileToZip(fileName: string) {
+    return await new Promise((resolve) => {
+      this.canvas.toBlob((blob: any) => {
+        this.jszip.file(`NFTCollection/${fileName}.png`, blob);
+        this.clearCanvas();
+        resolve(true);
+      });
+    });
   }
 
   async saveCanvasFile(fileName: string) {
-    return fs.writeFileSync(fileName, this.ctx.canvas.toBuffer("image/png"));
+    this.canvas.toBlob(async (blob: any) => {
+      saveAs(blob, `${fileName}`);
+    });
+  }
+
+  async generatePreview() {
+    return await new Promise((resolve) => {
+      this.canvas.toBlob(async (blob: any) => {
+        const img = (await this.blobToBase64(blob)) as string;
+        this.preview = img;
+        resolve(img);
+      });
+    });
+  }
+
+  blobToBase64(blob: any) {
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    return new Promise((resolve) => {
+      reader.onloadend = () => {
+        resolve(reader.result);
+      };
+    });
   }
 
   layersCartesianProduct(layers: Array<Layer>): Array<Array<Image>> {
@@ -69,16 +127,29 @@ class Engine {
     return shuffled.slice(0, n);
   }
 
-  generateNFTs() {
+  async generateNFTs() {
+    this.jszip = new JSZip();
     const cartesianProduct = this.layersCartesianProduct(this.layers);
     const selectedImages = this.selectNRandomElements(
       cartesianProduct,
       this.collectionSize
     );
-    selectedImages.forEach((images, index) => {
-      this.generateNFT(images, `${index}`);
-    });
+
+    await Promise.all(
+      selectedImages.map(async (images, index) => {
+        return await this.generateNFT(images, `${index}`);
+      })
+    );
+
+    this.jszip
+      .generateAsync({ type: "blob" })
+      .then((content: any) => {
+        saveAs(content, "NFTCollection.zip");
+      })
+      .catch((err: any) => console.log(err));
   }
 }
 
-export default Engine;
+const engine = new Engine({ width: 374, height: 374 }, [], 1);
+
+export default engine;

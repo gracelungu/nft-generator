@@ -19,3 +19,7 @@ a {
   color: #222;
   text-decoration: none;
 }
+
+.file-drop-dragging-over-target {
+  border-color: 1px solid $primary-color;
+}
