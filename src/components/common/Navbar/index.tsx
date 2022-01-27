@@ -70,7 +70,7 @@ const Navbar: React.FunctionComponent<Props> = ({
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/generator#generate">
+              <Link href="/generator">
                 <a>
                   <Button title="GENERATE" className={styles.navbar__button} />
                 </a>
