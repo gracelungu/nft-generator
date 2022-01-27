@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .container {
   width: 100%;
   padding: 20px 30px;
@@ -12,5 +14,33 @@
     padding-bottom: 30px;
     font-size: 15px;
     font-weight: 400;
+  }
+
+  &__input {
+    margin-bottom: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__lazy_button {
+    cursor: pointer;
+    color: $primary-color;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 10px;
   }
 }

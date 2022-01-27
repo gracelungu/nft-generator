@@ -6,11 +6,11 @@ function Advantages() {
     <div className={styles.container}>
       <div className={styles.container__item}>
         <div className={styles.container__item__title}>Generate</div>
-        <div className={styles.container__item__subtitle}>Smart contracts</div>
+        <div className={styles.container__item__subtitle}>Collection</div>
       </div>
       <div className={styles.container__item}>
-        <div className={styles.container__item__title}>Assets up to</div>
-        <div className={styles.container__item__subtitle}>10,000</div>
+        <div className={styles.container__item__title}>Unlimited</div>
+        <div className={styles.container__item__subtitle}>Assets</div>
       </div>
       <div className={styles.container__item}>
         <div className={styles.container__item__title}>Rarity</div>

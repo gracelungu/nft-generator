@@ -9,11 +9,11 @@ function Landing() {
       <div className={styles.container__info}>
         <span className={styles.container__info__title}>
           Generate <span className={styles.container__info__colored}>NFT </span>{" "}
-          collections and corresponding contracts with no code
+          collections and corresponding metadata with no code
         </span>
         <span className={styles.container__info__subtitle}>
-          A simple but useful tool to generate NFT collections and smart
-          contracts without coding.
+          A simple but useful tool to generate NFT collections and metadata
+          assets without coding.
         </span>
 
         <div className={styles.container__info__actions}>
@@ -29,13 +29,13 @@ function Landing() {
 
         <div className={styles.container__info__more_info}>
           <div className={styles.container__info__more_info__title}>
-            Generate up to
+            Generate
           </div>
           <div className={styles.container__info__more_info__big_title}>
-            <span className={styles.container__info__colored}>1,000</span>
+            <span className={styles.container__info__colored}>FREE</span>
           </div>
           <div className={styles.container__info__more_info__title}>
-            Assets free of charge
+            Unlimited Assets
           </div>
         </div>
       </div>

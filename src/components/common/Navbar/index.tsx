@@ -21,7 +21,7 @@ const Navbar: React.FunctionComponent<Props> = ({
   description = " ",
   author,
   link = "",
-  image = "/static/images/piggy.svg",
+  image = "/static/images/illustration.svg",
 }) => {
   return (
     <>
@@ -54,22 +54,23 @@ const Navbar: React.FunctionComponent<Props> = ({
             <a>
               <div className={styles.logoWrapper}>
                 <img src="/static/images/logo.svg" className={styles.logo} />
+                <h2>NFTooze</h2>
               </div>
             </a>
           </Link>
 
           <div className={styles.menu}>
             <span className={styles.link}>
-              <Link href="/#pricing">
+              <Link href="generator/#buy">
                 <a>
                   <span>
-                    <b>PRICING</b>
+                    <b>BUY ME A COFFEE</b>
                   </span>
                 </a>
               </Link>
             </span>
             <span className={styles.link}>
-              <Link href="/generator">
+              <Link href="/generator#generate">
                 <a>
                   <Button title="GENERATE" className={styles.navbar__button} />
                 </a>

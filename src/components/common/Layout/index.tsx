@@ -17,7 +17,7 @@ type Props = {
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = "NFT generator",
+  title = "NFTooze, NFT generator",
   headerClassName,
   className,
   description,

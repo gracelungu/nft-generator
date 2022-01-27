@@ -6,10 +6,10 @@ import Pricing from "@/src/components/Pricing";
 
 function HomePage() {
   return (
-    <Layout>
+    <Layout description="Generate NFT collections and corresponding metadata with no code">
       <Landing />
       <Advantages />
-      <Pricing />
+      {/* <Pricing /> */}
 
       <BottomNav />
     </Layout>

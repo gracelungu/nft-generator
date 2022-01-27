@@ -61,6 +61,17 @@
   }
 }
 
+@media (min-width: 1500px) {
+  .container {
+    height: 68vh;
+    &__illustration {
+      width: 45vw;
+      height: 68vh;
+      max-width: 45vw;
+    }
+  }
+}
+
 @media (max-width: $media-max-width) {
   .container {
     display: flex;
