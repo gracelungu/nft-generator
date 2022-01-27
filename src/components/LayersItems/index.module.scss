@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .container {
   width: 100%;
   min-height: 200px;
@@ -20,14 +22,14 @@
       position: relative;
     }
 
-    &__wrapper::before {
+    &__draggable::before {
       content: "";
       display: block;
       width: 20px;
       height: 10px;
       position: absolute;
       right: 0px;
-      top: 3px;
+      top: 2px;
       background-color: #777;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
@@ -58,5 +60,10 @@
       border: none;
       cursor: pointer;
     }
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
   }
 }

@@ -26,12 +26,14 @@ const LayersItems = () => {
   const dispatch = useDispatch();
 
   const handleOnDragEnd = (result: any) => {
+    if (!result.destination) return;
+
     const {
       source: { index: sourceIndex },
       destination: { index: destinationIndex },
     } = result;
     const movedLayers = [...layers];
-    const layer = movedLayers.splice(sourceIndex, 1)[0];
+    const [layer] = movedLayers.splice(sourceIndex, 1);
     movedLayers.splice(destinationIndex, 0, layer);
     updateLayers(movedLayers)(dispatch);
   };
@@ -45,8 +47,13 @@ const LayersItems = () => {
     );
   };
 
+  console.log(layers);
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ minHeight: `${100 * state.layers.items.length}px` }}
+    >
       <div className={styles.container__title}>Layers</div>
       <div className={styles.container__subtitle}>
         Drag and drop to adjust the position
@@ -64,12 +71,12 @@ const LayersItems = () => {
                 {layers.map((layer, index) => (
                   <Draggable
                     key={layer.position}
-                    draggableId={layer.name}
+                    draggableId={String(layer.position)}
                     index={index}
                   >
                     {(provided) => (
                       <div
-                        className={styles.container__items__wrapper}
+                        className={`${styles.container__items__wrapper} ${styles.container__items__draggable}`}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}

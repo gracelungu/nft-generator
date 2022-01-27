@@ -1,9 +1,7 @@
 import engine, { Image } from "@/src/engine";
 import { addLayerPath } from "@/src/redux/actions/layers/layers";
-import layers from "@/src/redux/reducers/layers";
 import InitialState from "@/src/redux/types/initialStates";
 import React from "react";
-import { useEffect } from "react";
 import { useRef } from "react";
 import { FileDrop } from "react-file-drop";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
@@ -17,10 +15,6 @@ function Assets() {
   const fileInputRef = useRef(null);
   const [preview, setPreview] = React.useState<string>("");
   const data = typedUseSelectorHook((state) => state.data);
-
-  useEffect(() => {
-    engine.setSize({ width: data?.width || 512, height: data?.height || 512 });
-  }, []);
 
   const state = typedUseSelectorHook((state) => state);
   const { selectedLayer } = state.layers;
@@ -67,9 +61,15 @@ function Assets() {
               "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
           };
     });
+
     await engine.generateNFTPreview(randomLayerImages);
     const samplePreview = await engine.generatePreview();
     setPreview(samplePreview);
+  };
+
+  const handlePreview = async () => {
+    engine.setSize({ width: data?.width || 512, height: data?.height || 512 });
+    previewSample();
   };
 
   return (
@@ -99,7 +99,7 @@ function Assets() {
           <div>
             <span
               className={styles.container__top__preview__button}
-              onClick={previewSample}
+              onClick={handlePreview}
             >
               PREVIEW
             </span>
@@ -112,7 +112,7 @@ function Assets() {
       </div>
 
       <div className={styles.container__bottom}>
-        {state.layers.items[selectedLayer].images.map(
+        {state?.layers?.items[selectedLayer]?.images?.map(
           ({ path, rarity, name }: Image, index) => (
             <Layer
               path={path}

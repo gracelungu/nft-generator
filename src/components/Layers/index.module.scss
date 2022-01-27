@@ -9,3 +9,12 @@
     width: 30%;
   }
 }
+
+@media (max-width: $media-max-width) {
+  .container {
+    flex-direction: column;
+    &__left {
+      width: 85%;
+    }
+  }
+}

@@ -1,11 +1,7 @@
 import { SET_DATA } from "@/src/redux/constants/data/data";
-import { Layer } from "@/src/engine";
+import { iData } from "../../types/initialStates";
 
-type state = {
-  items: Array<Layer>;
-};
-
-export default (state: state, { type, payload }: any) => {
+export default (state: iData, { type, payload }: any) => {
   switch (type) {
     case SET_DATA:
       return { ...state, ...payload };

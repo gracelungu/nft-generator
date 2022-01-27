@@ -76,3 +76,24 @@
     margin-top: 20px;
   }
 }
+
+@media (max-width: $media-max-width) {
+  .container {
+    width: 100%;
+    margin-top: 20px;
+    &__top {
+      flex-direction: column;
+      align-items: center;
+      &__upload {
+        width: 90%;
+        margin-bottom: 20px;
+        &__target {
+          width: 90%;
+        }
+      }
+      &__preview {
+        width: 90%;
+      }
+    }
+  }
+}

@@ -19,6 +19,7 @@ export default (state: state, { type, payload }: any) => {
       state.items.push(payload);
       return {
         ...state,
+        selectedLayer: state.items.length - 1,
         items: state.items,
       };
 
@@ -48,7 +49,7 @@ export default (state: state, { type, payload }: any) => {
     case ADD_LAYER_IMAGE:
       const { index: indexToAdd, image: imageToAdd } = payload;
       const itemsAdd = [...state.items];
-      itemsAdd[indexToAdd].images.push(imageToAdd);
+      itemsAdd[indexToAdd]?.images?.push(imageToAdd);
       const imagesLength = itemsAdd[indexToAdd].images.length;
       const rarityAmount = Number(100 / imagesLength).toFixed(2);
       const newImagesAdd = itemsAdd[indexToAdd].images.map((image) => {

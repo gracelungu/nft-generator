@@ -22,6 +22,24 @@
     &__item {
       width: 30%;
 
+      &__actions {
+        display: flex;
+
+        &__prev_button {
+          margin: 10px;
+          margin-left: 0;
+          color: $primary-color;
+          cursor: pointer;
+        }
+
+        &__prev_download {
+          margin: 10px;
+          color: #222;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+
       &__title {
         font-size: 20px;
         font-weight: 500;
@@ -34,8 +52,25 @@
 
       &__preview {
         margin-top: 12px;
-        height: calc(100% - 70px);
-        border: 1px dashed #000;
+
+        &__image {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $media-max-width) {
+  .container {
+    &__description {
+      max-width: 100%;
+      width: 100%;
+    }
+    &__items {
+      flex-direction: column;
+      &__item {
+        width: 100%;
       }
     }
   }

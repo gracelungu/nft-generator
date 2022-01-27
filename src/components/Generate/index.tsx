@@ -11,6 +11,7 @@ const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
 function Generate() {
   const [collectionSize, setCollectionSize] = React.useState<number>(1);
   const [maxCollectionSize, setMaxCollectionSize] = React.useState<number>(1);
+  const [ipfsURI, setIpfsURI] = React.useState<string>("");
   const data = typedUseSelectorHook((state) => state.data);
   const layers = typedUseSelectorHook((state) => state.layers);
 
@@ -24,11 +25,19 @@ function Generate() {
     engine.setSize({ width: data?.width || 512, height: data?.height || 512 });
     engine.setLayers(layers.items);
     engine.setCollectionSize(collectionSize || 1);
-    engine.generateNFTs();
+    engine.generateNFTs(data, ipfsURI);
   };
 
   return (
     <div className={styles.container}>
+      <Input
+        className={styles.container__input}
+        label="IPFS URI"
+        placeholder="ipfs://..."
+        value={ipfsURI}
+        onChange={({ target: { value } }: any) => setIpfsURI(value)}
+      />
+      <div className={styles.container__max}></div>
       <Input
         className={styles.container__input}
         label="Collection size"
@@ -41,9 +50,9 @@ function Generate() {
         Maximum collection size for provided layers: {maxCollectionSize}
       </div>
       <Button
-        title="Generate"
+        title="Generate collection"
         onClick={onGenerate}
-        disabled={maxCollectionSize < collectionSize}
+        disabled={maxCollectionSize < collectionSize || maxCollectionSize === 0}
       />
     </div>
   );

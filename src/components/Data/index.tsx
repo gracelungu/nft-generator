@@ -1,17 +1,30 @@
-import { iData } from "@/src/redux/types/initialStates";
+import engine from "@/src/engine";
 import initialData from "@/src/redux/initialStates/data";
 import React from "react";
 import Input from "../common/Input";
 import styles from "./index.module.scss";
 import { useEffect } from "react";
 import { setData as setDataAction } from "@/src/redux/actions/data/data";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import InitialState, { iData } from "@/src/redux/types/initialStates";
+
+const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
 
 function Data() {
+  const dispatch = useDispatch();
   const [data, setData] = React.useState<iData>(initialData);
+  const state = typedUseSelectorHook((state) => state);
+  const collageData = typedUseSelectorHook((state) => state?.data);
 
   useEffect(() => {
-    setDataAction(data);
+    setDataAction(data)(dispatch);
   }, [data]);
+
+  const previewCollage = async () => {
+    engine.setLayers(state.layers.items);
+    const samplePreview = await engine.generateBannerCollage();
+    setDataAction({ ...data, banner: samplePreview })(dispatch);
+  };
 
   return (
     <div className={styles.container}>
@@ -72,7 +85,26 @@ function Data() {
           <span className={styles.container__items__item__title}>
             Collage preview
           </span>
-          <div className={styles.container__items__item__preview}></div>
+          <div className={styles.container__items__item__actions}>
+            <div
+              className={styles.container__items__item__actions__prev_button}
+              onClick={previewCollage}
+            >
+              Preview
+            </div>
+            <div
+              className={styles.container__items__item__actions__prev_download}
+              onClick={() => engine.downloadBannerCollage()}
+            >
+              Download
+            </div>
+          </div>
+          <div className={styles.container__items__item__preview}>
+            <img
+              src={collageData?.banner}
+              className={styles.container__items__item__preview__image}
+            />
+          </div>
         </div>
       </div>
     </div>
