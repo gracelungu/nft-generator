@@ -2,22 +2,21 @@
 
 .container {
   display: flex;
-  height: 80vh;
+  justify-content: space-between;
   padding-top: 20px;
   background-color: $background-color;
 
   &__illustration {
-    position: absolute;
-    width: 45vw;
+    width: 46%;
     height: 80vh;
-    max-width: 45vw;
+    max-width: 48vw;
     right: 0;
     object-fit: contain;
   }
 
   &__info {
     position: relative;
-    max-width: 48%;
+    max-width: 46%;
     padding-right: 20px;
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@
     }
 
     &__more_info {
-      margin-top: 100px;
+      margin-top: 80px;
       &__title {
         font-size: 18px;
         font-weight: 500;
