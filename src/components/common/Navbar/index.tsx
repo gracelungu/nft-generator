@@ -46,6 +46,20 @@ const Navbar: React.FunctionComponent<Props> = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
         <style>{dom.css()}</style>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-X35LBBMT97"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-X35LBBMT97');`,
+            }}
+          />
       </Head>
 
       <div className={styles.wrapper}>
