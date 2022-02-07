@@ -41,6 +41,11 @@
   font-weight: 400;
   line-height: normal;
   margin-left: 4vw;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: $media-max-width) {

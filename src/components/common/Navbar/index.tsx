@@ -46,20 +46,20 @@ const Navbar: React.FunctionComponent<Props> = ({
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
         <style>{dom.css()}</style>
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-X35LBBMT97"
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-X35LBBMT97"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
           
             gtag('config', 'G-X35LBBMT97');`,
-            }}
-          />
+          }}
+        />
       </Head>
 
       <div className={styles.wrapper}>
@@ -75,14 +75,35 @@ const Navbar: React.FunctionComponent<Props> = ({
 
           <div className={styles.menu}>
             <span className={styles.link}>
-              <Link href="generator/#buy">
+              <Link href="mailto:grace.lungu.bw@gmail.com">
                 <a>
                   <span>
-                    <b>BUY ME A COFFEE</b>
+                    <img src="/static/images/gmail.png" />
                   </span>
                 </a>
               </Link>
             </span>
+
+            <span className={styles.link}>
+              <Link href="https://www.linkedin.com/in/grace-lungu-262306190/">
+                <a target="_blank">
+                  <span>
+                    <img src="/static/images/linkedin.png" />
+                  </span>
+                </a>
+              </Link>
+            </span>
+
+            <span className={styles.link}>
+              <Link href="https://twitter.com/gracelubw">
+                <a target="_blank">
+                  <span>
+                    <img src="/static/images/twitter.png" />
+                  </span>
+                </a>
+              </Link>
+            </span>
+
             <span className={styles.link}>
               <Link href="/generator">
                 <a>
